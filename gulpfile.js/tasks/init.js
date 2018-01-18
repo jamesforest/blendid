@@ -5,7 +5,7 @@ var path = require('path')
 var merge = require('merge-stream')
 
 gulp.task('init', function() {
-  var defaultStream = gulp.src(['../extras/default/**/*'])
+  var defaultStream = gulp.src(['../extras/default/*'])
     .pipe(gulp.dest(process.env.PWD))
 
   var configStream = gulp.src(['./path-config.json', './task-config.js'])
