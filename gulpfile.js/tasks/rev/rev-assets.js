@@ -1,7 +1,7 @@
 var gulp      = require('gulp')
 var path      = require('path')
 var rev       = require('gulp-rev')
-var revNapkin = require('gulp-rev-napkin');
+var revDel    = require('gulp-rev-delete-original');
 
 // 1) Add md5 hashes to assets referenced by CSS and JS files
 gulp.task('rev-assets', function() {
@@ -11,7 +11,7 @@ gulp.task('rev-assets', function() {
   return gulp.src([path.resolve(process.env.PWD, PATH_CONFIG.dest,'**/*'), ignoreThese])
     .pipe(rev())
     .pipe(gulp.dest(PATH_CONFIG.dest))
-    .pipe(revNapkin({ verbose: false, force: true }))
+    .pipe(revDel())
     .pipe(rev.manifest(path.resolve(process.env.PWD, PATH_CONFIG.dest, 'rev-manifest.json'), {merge: true}))
     .pipe(gulp.dest(''))
 })
