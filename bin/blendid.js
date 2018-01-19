@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const path = require('path');
-
-const additionalArgs = require('minimist')(process.argv.slice(2))._
-const blendidEntryFile = require.resolve('blendid');
-const gulpModulePath = path.dirname(require.resolve('gulp'));
-const gulpBinaryFile = path.join(gulpModulePath, '/bin/gulp');
+// do not commit!
+const additionalArgs   = require('minimist')(process.argv.slice(2))._
+const blendidEntryFile = './gulpfile.js/index.js';
+const gulpModulePath   = './node_modules/gulp';
+const gulpBinaryFile   = path.join(gulpModulePath, 'bin/gulp.js');
 
 let args = ['--gulpfile', blendidEntryFile]
 
