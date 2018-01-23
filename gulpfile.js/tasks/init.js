@@ -8,6 +8,7 @@ gulp.task('init', function() {
   var rootStream = gulp.src(['../root/*'])
     .pipe(gulp.dest(process.env.PWD))
 
+  // need to add the .eslint/.stylelint to this once bin task is fixed
   var configStream = gulp.src(['./path-config.json', './task-config.js'])
     .pipe(gulp.dest(path.join(process.env.PWD, 'config')))
 
